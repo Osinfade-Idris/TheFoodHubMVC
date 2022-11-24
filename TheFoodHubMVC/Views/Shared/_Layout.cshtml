@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TheFoodHubMVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+   @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
+    <link rel="stylesheet" href="~/css/mystyle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/signuplogin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TheFoodHubMVC.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="HeaderWrapper">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="logo">TheFoodHub </a>
+            <div class="navbar">
+                <a class="active" href="#home">
+                    Home
+                </a>
+                <a href="#dishes">Dishes</a>
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+
+                <a asp-area="" asp-controller="Role" asp-action="Index">Role</a>
+
+                <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+                
+                <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+            </div>
+        </div>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div>
+      <section class="footer" id="footer">
+        <div class="box-container">
+          <div class="box">
+            <h3>Location</h3>
+            <a>Nigeria</a>
+            <a>USA</a>
+            <a>UK</a>
+            <a>France</a>
+          </div>
+
+          <div class="box">
+            <h3>Quick links</h3>
+            <a>Home</a>
+            <a>Dishes</a>
+            <a>About</a>
+            <a>Menu</a>
+          </div>
+
+          <div class="box">
+            <h3>Contact links</h3>
+            <a>+234-706-957-6909</a>
+            <a>idris.osinfade@interswitchgroup.com</a>
+            <a>osinfadeidris@gmail.com</a>
+            <a>Lagos, Nigeria</a>
+          </div>
+          <div class="box">
+            <h3>Follow us</h3>
+            <a>Facebook</a>
+            <a>Twitter</a>
+            <a>Instagram</a>
+            <a>Linkedin</a>
+          </div>
+        </div>
+        <div class="credit">
+          copyright by <span>Idris Osinfade</span>
+        </div>
+      </section>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

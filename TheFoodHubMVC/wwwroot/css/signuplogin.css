@@ -1,0 +1,150 @@
+#main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.remember_section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 16px;
+}
+
+.remember_section2 {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    margin-top: 16px;
+}
+
+
+#logo {
+    margin-left: 32px;
+    margin-top: 40px;
+}
+
+.input_section {
+    margin-left: 100px;
+}
+
+.welcome {
+    margin-top: 30px;
+    font-size: 38px;
+    color: #333333;
+}
+
+#subhead {
+    color: #A1A5A8;
+    font-size: 16px;
+    
+}
+
+/*input[type=text] {
+    width: 70%;
+    color: #8C9095;
+    size: 15px;
+    padding: 16px 16px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #E9E8EB;
+    border-radius: 8px;
+}*/
+
+#email_label {
+    margin-top: 60px;
+}
+
+.password_label {
+    margin-top: 24px;
+}
+
+#remember_check {
+    margin-bottom: 4px;
+}
+
+#remember {
+    color: #5C6068;
+    font-size: 14px;
+}
+
+.text_wrap {
+    margin-top: 20px;
+    width: 70%;
+}
+
+
+
+
+
+#forgot_password {
+    color: #7E56DA;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-left: -20px;
+}
+
+.button {
+    width: 366px;
+    color: white;
+    background: #27ae60;
+    padding: 14px 0px;
+    border-radius: 8px;
+    border: 1px solid #7E56DA;
+    margin-top: 16px;
+}
+
+    .button:hover {
+        opacity:0.7;
+    }
+
+.outline_button {
+    max-width: 340px;
+    color: #4E535D;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #E9E8EB;
+    padding: 10px;
+    padding-left: px;
+}
+
+
+
+/* .shape{
+
+    margin-top: -80px;
+    background-color: #F3F5F9;
+    width: 720px;
+    height: 100vh;
+    position: fixed;
+
+} */
+
+
+#google_text {
+    padding-top: 6px;
+    padding-left: 90px;
+}
+
+#goo-image {
+    padding-left: 90px;
+}
+
+
+
+.logo1 {
+    margin-top: -100px;
+}
+
+
+
+.log {
+    margin-top: -80px;
+    width: 720px;
+    height: 100vh;
+    position: fixed;
+    object-fit: none;
+}
+
+
+
+/* #object-position-1 {
+    object-position: 10px;
+  } */

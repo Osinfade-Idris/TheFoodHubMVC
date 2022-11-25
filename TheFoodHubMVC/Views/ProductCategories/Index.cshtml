@@ -1,13 +1,27 @@
 ﻿@model IEnumerable<TheFoodHubMVC.Models.ProductCategory>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Product Categories";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+
 }
 
-<h1>Index</h1>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Product Categories</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Product Categories</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
+    <section class="section profile">
 <p>
-    <a asp-action="Create">Create New</a>
+  <a asp-action="Create">
+   <button type="button" class="btn btn-outline-primary" asp-action="Create">Create New category</button>
+  </a>
 </p>
 <table class="table">
     <thead>
@@ -15,7 +29,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.CategoryName)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -25,11 +39,21 @@
                 @Html.DisplayFor(modelItem => item.CategoryName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.CategoryId">
+                <button type="button" class="btn btn-warning"><i class="bi bi-pen"></i></button>
+                </a>
+            
+                <a asp-action="Details" asp-route-id="@item.CategoryId">
+                <button type="button" class="btn btn-info"><i class="bi bi-info-circle"></i></button>
+                </a> 
+            
+                <a asp-action="Delete" asp-route-id="@item.CategoryId">
+                <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                </a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</section>
+</main>

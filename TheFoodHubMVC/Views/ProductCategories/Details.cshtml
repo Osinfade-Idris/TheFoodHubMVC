@@ -1,14 +1,21 @@
 ﻿@model TheFoodHubMVC.Models.ProductCategory
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Category Details";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Category Details</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Category Details</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
-<h1>Details</h1>
-
-<div>
-    <h4>ProductCategory</h4>
-    <hr />
+    <section class="section profile">
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CategoryName)
@@ -17,8 +24,18 @@
             @Html.DisplayFor(model => model.CategoryName)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.CategoryId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+    <p>
+        <a asp-action="Edit" asp-route-id="@Model?.CategoryId">
+            <button type="button" class="btn btn-outline-primary">Edit</button>
+        </a>
+    </p>
+
+    <p>
+        <a asp-action="Index">
+            <button type="button" class="btn btn-outline-primary">Back</button>
+        </a>
+    </p>
+
+    </section>
+</main>

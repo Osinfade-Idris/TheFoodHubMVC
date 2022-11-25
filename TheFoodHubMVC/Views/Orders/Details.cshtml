@@ -2,14 +2,25 @@
 
 @{
     ViewData["Title"] = "Details";
+
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+
 }
+<main id="main" class="main">
 
-<h1>Details</h1>
+    <div class="pagetitle">
+        <h1>View Order</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">View Order</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
-<div>
-    <h4>Order</h4>
-    <hr />
-    <dl class="row">
+    <section class="section profile">
+
+        <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.OrderTotal)
         </dt>
@@ -29,8 +40,10 @@
             @Html.DisplayFor(model => model.ApplicationUser.Id)
         </dd>
     </dl>
-</div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.OrderId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+
+    </section>
+</main>

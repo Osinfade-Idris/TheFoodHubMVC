@@ -1,9 +1,16 @@
 ﻿@model TheFoodHubMVC.Models.Product
 
+
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Product";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+    var categories = (List<ProductCategory>)ViewData["Categories"];
+    var statuses = (List<Status>)ViewData["Statuses"];
 }
 
+
+<main id="main" class="main">
+    <section class="section profile">
 <h1>Create</h1>
 
 <h4>Product</h4>
@@ -12,10 +19,16 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
             <div class="form-group">
                 <label asp-for="ProductName" class="control-label"></label>
                 <input asp-for="ProductName" class="form-control" />
                 <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="form-label"></label>
+                <select asp-for="Category" class="form-control" asp-items='new SelectList(categories, "CategoryId","CategoryName")'></select>
+                <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Price" class="control-label"></label>
@@ -28,9 +41,9 @@
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ProductPicture" class="control-label"></label>
-                <input asp-for="ProductPicture" class="form-control" />
-                <span asp-validation-for="ProductPicture" class="text-danger"></span>
+                <label asp-for="Status" class="form-label"></label>
+                <select asp-for="Status" class="form-control" asp-items='new SelectList(statuses, "StatusId","StatusName")'></select>
+                <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -42,6 +55,10 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+    </section>
+</main>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

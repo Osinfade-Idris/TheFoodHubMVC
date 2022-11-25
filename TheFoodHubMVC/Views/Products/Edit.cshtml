@@ -1,13 +1,21 @@
 ﻿@model TheFoodHubMVC.Models.Product
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit"; 
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>Product</h4>
-<hr />
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Edit Product</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Edit Product</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section profile">
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -29,11 +37,6 @@
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ProductPicture" class="control-label"></label>
-                <input asp-for="ProductPicture" class="form-control" />
-                <span asp-validation-for="ProductPicture" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -43,7 +46,8 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+    </section>
+</main>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

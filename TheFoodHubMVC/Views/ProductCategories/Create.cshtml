@@ -2,8 +2,22 @@
 
 @{
     ViewData["Title"] = "Create";
-}
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 
+}
+<main id="main" class="main">
+    
+    <div class="pagetitle">
+        <h1>Profile</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Add Product category</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
 <h1>Create</h1>
 
 <h4>ProductCategory</h4>
@@ -27,7 +41,8 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+</section>
+</main>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

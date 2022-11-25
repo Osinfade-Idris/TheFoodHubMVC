@@ -19,8 +19,6 @@ namespace TheFoodHubMVC.Models
         public int Quantity { get; set; }
         [Required]
         public Status Status { get; set; }  
-        [Required]
-        public string ProductPicture { get; set; }
         public List<OrderItem> OrderItems { get; set; }
 
 

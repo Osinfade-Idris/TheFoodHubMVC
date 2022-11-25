@@ -1,13 +1,23 @@
 ﻿@model TheFoodHubMVC.Models.ProductCategory
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Category";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
-<h1>Edit</h1>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Edit Category</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Edit Category</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
-<h4>ProductCategory</h4>
-<hr />
+    <section class="section profile">
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -25,9 +35,14 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<p>
+    <a asp-action="Index">
+        <button type="button" class="btn btn-outline-primary">Back</button>
+    </a>
+</p>
+
+    </section>
+</main>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

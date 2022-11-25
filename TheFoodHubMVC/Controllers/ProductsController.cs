@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +47,9 @@ namespace TheFoodHubMVC.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            ViewData["Categories"] = _context.ProductCategories.ToList();
+            ViewData["Statuses"] = _context.Statuses.ToList();
+
             return View();
         }
 
@@ -54,9 +58,9 @@ namespace TheFoodHubMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,ProductName,Price,Quantity,ProductPicture")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductId,CategoryId,ProductName,Price,Quantity,StatusId")] Product product)
         {
-            if (ModelState.IsValid)
+           if (ModelState.IsValid)
             {
                 product.ProductId = Guid.NewGuid();
                 _context.Add(product);
@@ -87,7 +91,7 @@ namespace TheFoodHubMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("ProductId,ProductName,Price,Quantity,ProductPicture")] Product product)
+        public async Task<IActionResult> Edit(Guid id, [Bind("ProductId,ProductName,Price,Quantity")] Product product)
         {
             if (id != product.ProductId)
             {

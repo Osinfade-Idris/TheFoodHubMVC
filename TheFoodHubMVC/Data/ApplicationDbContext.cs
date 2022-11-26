@@ -33,5 +33,7 @@ namespace TheFoodHubMVC.Data
                 .WithMany()
                 .OnDelete(DeleteBehavior.Restrict);
         }
+
+        public DbSet<TheFoodHubMVC.Models.AllProducts> AllProducts { get; set; }
     }
 }

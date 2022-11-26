@@ -81,7 +81,7 @@
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
-@*
+
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-people-fill"></i><span>Staffs</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -93,17 +93,12 @@
                         </a>
                     </li>
                     <li>
-                        <a asp-controller="" asp-action="">
+                        <a asp-controller="Staffs" asp-action="Index">
                             <i class="bi bi-person-lines-fill"></i><span>All Staffs</span>
                         </a>
                     </li>
-                    <li>
-                        <a asp-controller="" asp-action="">
-                            <i class="bi bi-person-gear"></i><span>Pending Staff</span>
-                        </a>
-                    </li>
                 </ul>
-            </li><!-- End Staffs Nav -->*@
+            </li><!-- End Staffs Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav1" data-bs-toggle="collapse" href="#">
@@ -116,12 +111,12 @@
                         </a>
                     </li>
                     <li>
-                        <a asp-controller="Products" asp-action="Create">
+                        <a asp-controller="AllProducts" asp-action="Create">
                             <i class="bi bi-bag-plus-fill"></i><span>Add New Product</span>
                         </a>
                     </li>
                     <li>
-                        <a asp-controller="Products" asp-action="Index">
+                        <a asp-controller="AllProducts" asp-action="Index">
                             <i class="bi bi-basket-fill"></i><span>All Products</span>
                         </a>
                     </li>

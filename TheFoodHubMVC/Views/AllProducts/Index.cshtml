@@ -1,0 +1,91 @@
+﻿@model IEnumerable<TheFoodHubMVC.Models.AllProducts>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Products</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Products</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+
+
+        <p>
+            <a asp-action="Create">Create New Product</a>
+        </p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>*@
+            <th>
+                Products
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.StatusId)
+            </th>*@
+            <th>
+                Picture
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.StatusId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPicture)
+            </td>
+            <td>
+
+                <a asp-action="Edit" asp-route-id="@item.ProductId">
+                    <button type="button" class="btn btn-warning"><i class="bi bi-pen"></i></button>
+                </a>
+
+                <a asp-action="Details" asp-route-id="@item.ProductId">
+                    <button type="button" class="btn btn-info"><i class="bi bi-info-circle"></i></button>
+                </a>
+
+                <a asp-action="Delete" asp-route-id="@item.ProductId">
+                    <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+    </section>
+</main>

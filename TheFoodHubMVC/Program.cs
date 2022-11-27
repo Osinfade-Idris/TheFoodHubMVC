@@ -20,7 +20,15 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.S
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminPages",
+        builder => builder.RequireRole("Admin"));
+/*    options.AddPolicy("writepolicy",
+        builder => builder.RequireRole("admin", "manager"));
+    options.AddPolicy("controlpolicy",
+        builder => builder.RequireRole("manager"));*/
+});
 
 builder.Services.AddControllersWithViews();
 

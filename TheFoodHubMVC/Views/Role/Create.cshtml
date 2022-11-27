@@ -1,9 +1,19 @@
 ﻿@model Microsoft.AspNetCore.Identity.IdentityRole
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create"; Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
-<h1>Create Role</h1>
-<hr />
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Create Role</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Create Role</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -23,6 +33,11 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+     
+    </section>
+
+</main>
+
 @section Scripts{
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

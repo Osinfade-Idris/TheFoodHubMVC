@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<TheFoodHubMVC.Models.Order>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index"; Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
+<main id="main" class="main">
 
-<h1>Index</h1>
+    <div class="pagetitle">
+        <h1>Orders</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Orders</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <section class="section profile">
+
 <table class="table">
     <thead>
         <tr>
@@ -19,7 +27,7 @@
                 @Html.DisplayNameFor(model => model.Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ApplicationUser)
+                Staff Name
             </th>
             <th></th>
         </tr>
@@ -34,7 +42,7 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ApplicationUser.Id)
+                @Html.DisplayFor(modelItem => (item.ApplicationUser.FirstName + " " + " " + item.ApplicationUser.LastName))
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
@@ -45,3 +53,5 @@
 }
     </tbody>
 </table>
+    </section>
+</main>

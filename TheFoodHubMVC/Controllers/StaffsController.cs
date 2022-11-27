@@ -8,8 +8,7 @@ using TheFoodHubMVC.Models;
 
 namespace TheFoodHubMVC.Controllers
 {
-    [Authorize]
-
+    [Authorize(Policy = "AdminPages")]
     public class StaffsController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TheFoodHubMVC.Controllers
 {
-
+    
+    
+    [Authorize(Policy = "AdminPages")]
     public class RoleController : Controller
     {
         RoleManager<IdentityRole> roleManager;
@@ -12,8 +14,7 @@ namespace TheFoodHubMVC.Controllers
         {
             this.roleManager = roleManager;
         }
-/*
-        [Authorize(Policy = "readpolicy")]*/
+
         public IActionResult Index()
         {
             var roles = roleManager.Roles.ToList();

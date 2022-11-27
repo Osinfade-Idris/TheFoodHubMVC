@@ -1,15 +1,21 @@
 ﻿@model TheFoodHubMVC.Models.Status
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete"; Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
-<h1>Delete</h1>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Delete Status</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Delete Status</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Status</h4>
-    <hr />
+    <section class="section profile">
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.StatusName)
@@ -24,4 +30,6 @@
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>
-</div>
+
+    </section>
+</main>

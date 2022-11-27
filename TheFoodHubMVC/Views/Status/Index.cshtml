@@ -1,14 +1,27 @@
 ﻿@model IEnumerable<TheFoodHubMVC.Models.Status>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Status"; 
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
-<h1>Index</h1>
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Status</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Status</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <section class="section profile">
+        <p>
+            <a asp-action="Create">
+                <button type="button" class="btn btn-outline-primary" asp-action="Create">Create New Status</button>
+            </a>
+        </p>
 <table class="table">
     <thead>
         <tr>
@@ -33,3 +46,5 @@
 }
     </tbody>
 </table>
+    </section>
+</main>

@@ -22,7 +22,7 @@ namespace TheFoodHubMVC.Controllers
 
         public async Task<ActionResult> Index()
         {
-            var users = await _userManager.GetUsersInRoleAsync("Admin");
+            var users = await _userManager.GetUsersInRoleAsync("Staff");
             return View(users);
         }
 

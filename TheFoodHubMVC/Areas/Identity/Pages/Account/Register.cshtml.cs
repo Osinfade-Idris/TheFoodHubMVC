@@ -23,6 +23,7 @@ using TheFoodHubMVC.Models;
 
 namespace TheFoodHubMVC.Areas.Identity.Pages.Account
 {
+    [Authorize(Policy = "AdminPages")]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;

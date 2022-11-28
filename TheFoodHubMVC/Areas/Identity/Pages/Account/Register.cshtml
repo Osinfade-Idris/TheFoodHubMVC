@@ -2,9 +2,23 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
     var roles = (List<IdentityRole>)ViewData["roles"];
 }
-<div id="main">
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Register New Staff</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Regkster New Staff</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+
     <form id="account" method="post">
         <div class="input_section">
             <p id="subhead">Please enter your details.</p>
@@ -74,12 +88,9 @@
         </div>
     </form>
 
-    <div>
-        <img id="object-position-1" src="/images/logo2.jpg" class="log" />
-    </div>
-</div>
 
-
+ </section>
+</main>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

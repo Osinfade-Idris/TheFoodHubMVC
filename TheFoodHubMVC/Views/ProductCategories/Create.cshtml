@@ -6,22 +6,17 @@
 
 }
 <main id="main" class="main">
-    
     <div class="pagetitle">
-        <h1>Profile</h1>
+        <h1>New Category </h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
                 <li class="breadcrumb-item active">Add Product category</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
 
     <section class="section profile">
-<h1>Create</h1>
-
-<h4>ProductCategory</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -31,7 +26,7 @@
                 <input asp-for="CategoryName" class="form-control" />
                 <span asp-validation-for="CategoryName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-top:20px; margin-bottom:20px;">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

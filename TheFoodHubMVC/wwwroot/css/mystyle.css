@@ -188,6 +188,124 @@ header .navbar a {
 
 
 
+.first-link-full-div {
+    min-height: 300px;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    padding: 60px 0px 0px 0px;
+    border: rgba(235, 235, 235, 1) 1px solid;
+    border-radius: 7px;
+    background-color: #00ad57;
+}
+    .first-link-full-div .title-div {
+        min-height: 30px;
+        background: #FFF;
+        padding: 10px;
+        float: left;
+        min-width: 280px;
+        color: #00ad57;
+        margin: -80px 0px 0px 50px;
+        border-radius: 5px;
+        border: 1px solid #00ad57  ;
+    }
+.first-link-full-div .title-div h2 {
+  padding: 0x;
+  margin: 0px;
+  font-size: 18px;
+  font-family: body_text;
+  font-weight: normal;
+}
+.first-link-full-div .first-link-back {
+  width: 22%;
+  display: inline-block;
+  vertical-align: top;
+  height: auto;
+  margin-bottom: 60px;
+  margin-right: 10px;
+}
+.first-link-full-div .first-link-back .div {
+  text-align: center;
+  background: #fff;
+  border: rgba(235, 235, 235, 1) 1px solid;
+  height: 100px;
+  border-radius: 5px;
+  -moz-transition: all 0.3s ease-in 0.3s;
+  transition: all 0.3s ease-in 0.3s;
+  -webkit-transition: all 0.3s ease-in 0.3s;
+  -ms-transition: all 0.3s ease-in 0.3s;
+  -o-transition: all 0.3s ease-in 0.3s;
+}
+.first-link-full-div .first-link-back .div:hover {
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.first-link-full-div .first-link-back .div h3 {
+  font-size: 20px;
+  color: #192a56;
+  line-height: 40px;
+  margin: 0px;
+  font-weight: 300;
+}
+.first-link-full-div .first-link-back .div .btn {
+  border: #192a56 1px solid;
+  min-width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 0px 20px 0px 20px;
+  background: #27ae60;
+  color: #fff;
+  margin: 10px auto;
+  font-family: body_text;
+  -moz-transition: all 0.2s ease-in 02s;
+  transition: all 0.2s ease-in 0.2s;
+  -webkit-transition: all 0.2s ease-in 0.2s;
+  -ms-transition: all 0.2s ease-in 0.2s;
+  -o-transition: all 0.2s ease-in 0.2s;
+  cursor: pointer;
+}
+.first-link-full-div .first-link-back .div .btn:hover {
+  background: #fff;
+  color: #27ae60;
+}
+
+@media all and (max-width: 950px) {
+  .first-link-full-div .first-link-back {
+    width: 30%;
+  }
+}
+@media all and (max-width: 780px) {
+  .first-link-full-div .first-link-back {
+    width: 46%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .first-link-full-div {
+    width: 96%;
+  }
+  .first-link-full-div .title-div {
+    float: left;
+    margin: -80px 0px 0px 20px;
+  }
+  .first-link-full-div .first-link-back {
+    width: 49%;
+  }
+  .first-link-full-div .first-link-back .div h3 {
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 350px) {
+  .first-link-full-div .first-link-back .div h3 {
+    font-size: 13px;
+  }
+  .first-link-full-div .title-div {
+    float: left;
+    margin: -80px 0px 0px 5px;
+  }
+}
+
+
 
 
 

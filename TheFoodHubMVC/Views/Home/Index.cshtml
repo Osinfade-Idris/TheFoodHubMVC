@@ -1,7 +1,7 @@
-﻿@{
+﻿@model IEnumerable<TheFoodHubMVC.Models.ProductCategory>
+@{
     ViewData["Title"] = "Home";
 }
-
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -20,4 +20,31 @@
             </div>
         </div>
     </div>
+</div>
+
+<div>
+    <section class="dishes" id="categories">
+    
+    <div class="first-link-full-div">
+        <div class="title-div">
+            <h2>Our Product Categories</h2>
+        </div>
+
+        @foreach (var item in Model) {
+        <div class="first-link-back">
+            <div class="div">
+                <div class="text">
+                    <h3>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </h3>
+                </div>
+                <button class="btn" title="Shop Now">
+                    <i class="fa fa-shopping-basket"></i> Shop Now
+                </button>
+            </div>
+        </div>
+        }
+    </div>
+
+</section>
 </div>

@@ -24,10 +24,6 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminPages",
         builder => builder.RequireRole("Admin"));
-/*    options.AddPolicy("writepolicy",
-        builder => builder.RequireRole("admin", "manager"));
-    options.AddPolicy("controlpolicy",
-        builder => builder.RequireRole("manager"));*/
 });
 
 builder.Services.AddControllersWithViews();

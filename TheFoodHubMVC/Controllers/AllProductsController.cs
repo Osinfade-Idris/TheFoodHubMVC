@@ -12,7 +12,6 @@ using TheFoodHubMVC.Models;
 namespace TheFoodHubMVC.Controllers
 {
     [Authorize(Policy = "AdminPages")]
-
     public class AllProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -35,6 +34,9 @@ namespace TheFoodHubMVC.Controllers
             {
                 return NotFound();
             }
+
+            ViewData["Categories"] = _context.ProductCategories.ToList();
+            ViewData["Statuses"] = _context.Statuses.ToList();
 
             var allProducts = await _context.AllProducts
                 .FirstOrDefaultAsync(m => m.ProductId == id);
@@ -79,6 +81,8 @@ namespace TheFoodHubMVC.Controllers
                 return NotFound();
             }
 
+            ViewData["Categories"] = _context.ProductCategories.ToList();
+            ViewData["Statuses"] = _context.Statuses.ToList();
             var allProducts = await _context.AllProducts.FindAsync(id);
             if (allProducts == null)
             {

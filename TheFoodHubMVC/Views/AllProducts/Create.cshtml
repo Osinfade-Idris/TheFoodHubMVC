@@ -6,11 +6,18 @@
     var categories = (List<ProductCategory>)ViewData["Categories"];
     var statuses = (List<Status>)ViewData["Statuses"];
 }
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>New Category </h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Dashboard" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Add New Product</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
 
-<h1>Create</h1>
-
-<h4>AllProducts</h4>
-<hr />
+    <section class="section profile">
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -56,3 +63,5 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+    </section>
+</main>

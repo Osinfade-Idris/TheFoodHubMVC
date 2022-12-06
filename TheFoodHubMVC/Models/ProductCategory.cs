@@ -9,5 +9,6 @@ namespace TheFoodHubMVC.Models
         public Guid CategoryId { get; set; }
         [Required]
         public string? CategoryName { get; set; }
+
     }
 }
